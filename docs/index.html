@@ -113,8 +113,9 @@
         <script>
             const REPO = "Momwhyareyouhere/flux";
             const API = `https://api.github.com/repos/${REPO}/releases`;
-            const installCmd = `curl -fsSL https://raw.githubusercontent.com/${REPO}/main/scripts/install-latest.sh | bash -s -- ${REPO}`;
-            document.getElementById("install-cmd").textContent = installCmd;
+            const fallbackInstallCmd = `curl -fsSL https://raw.githubusercontent.com/${REPO}/main/scripts/install-latest.sh | bash -s -- ${REPO}`;
+            document.getElementById("install-cmd").textContent =
+                fallbackInstallCmd;
 
             async function loadReleases() {
                 const status = document.getElementById("status");
@@ -135,6 +136,14 @@
                     status.textContent = "ok";
                     latest.href = releases[0].html_url;
                     latest.textContent = `Latest: ${releases[0].tag_name}`;
+
+                    const installer = (releases[0].assets || []).find(
+                        (a) => a.name === "install-latest.sh",
+                    );
+                    if (installer && installer.browser_download_url) {
+                        document.getElementById("install-cmd").textContent =
+                            `curl -fsSL ${installer.browser_download_url} | bash -s -- ${REPO}`;
+                    }
 
                     list.innerHTML = "";
                     for (const r of releases) {
