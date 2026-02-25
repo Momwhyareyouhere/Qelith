@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Kairo Releases</title>
+        <title>Qelith Releases</title>
         <style>
             :root {
                 --bg: #0d1117;
@@ -92,9 +92,9 @@
     <body>
         <div class="wrap">
             <div class="card">
-                <h1>Kairo Releases</h1>
-                <p>Install Kairo from the latest public release:</p>
-                <p>Repo: <code>Momwhyareyouhere/Kairo</code></p>
+                <h1>Qelith Releases</h1>
+                <p>Install Qelith from the latest public release:</p>
+                <p>Repo: <code>Momwhyareyouhere/Qelith</code></p>
                 <pre id="install-cmd"></pre>
                 <div class="row">
                     <span class="badge ok" id="status">loading...</span>
@@ -110,13 +110,13 @@
             </div>
 
             <div class="card">
-                <h2>Kairo Syntax</h2>
+                <h2>Qelith Syntax</h2>
                 <p>
                     Entry function uses <code>root</code>. Helper functions use
                     <code>glyph</code>.
                 </p>
                 <pre><code>glyph greet [
-    emit "hello from kairo\n".
+    emit "hello from qelith\n".
 ]
 
 root main [
@@ -138,7 +138,7 @@ done N.                  # exit with code N</code></pre>
         </div>
 
         <script>
-            const REPO = "Momwhyareyouhere/Kairo";
+            const REPO = "Momwhyareyouhere/Qelith";
             const API = `https://api.github.com/repos/${REPO}/releases`;
             const fallbackInstallCmd = `Open latest release and download install-latest.sh`;
             document.getElementById("install-cmd").textContent =
