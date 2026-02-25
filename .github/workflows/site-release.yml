@@ -17,7 +17,7 @@ jobs:
 
       - name: Package site
         run: |
-          tar -C site -czf site.tar.gz .
+          tar -C docs -czf site.tar.gz .
 
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
