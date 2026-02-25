@@ -1,4 +1,4 @@
-name: release
+name: site-release
 
 on:
   push:
@@ -9,19 +9,18 @@ permissions:
   contents: write
 
 jobs:
-  build-and-release:
+  publish-site-release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build release assets
-        run: make dist
+      - name: Package site
+        run: |
+          tar -C site -czf site.tar.gz .
 
-      - name: Publish release
+      - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: |
-            dist/flux-linux-x86_64.tar.gz
-            dist/install-latest.sh
+          files: site.tar.gz
           generate_release_notes: true
