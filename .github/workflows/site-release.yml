@@ -22,5 +22,7 @@ jobs:
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: site.tar.gz
+          files: |
+            site.tar.gz
+            scripts/install-latest.sh
           generate_release_notes: true
