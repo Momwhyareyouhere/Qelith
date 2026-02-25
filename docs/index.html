@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Flux Releases</title>
+        <title>Kairo Releases</title>
         <style>
             :root {
                 --bg: #0d1117;
@@ -92,9 +92,9 @@
     <body>
         <div class="wrap">
             <div class="card">
-                <h1>Flux Releases</h1>
-                <p>Install Flux from the latest public release:</p>
-                <p>Repo: <code>Momwhyareyouhere/flux</code></p>
+                <h1>Kairo Releases</h1>
+                <p>Install Kairo from the latest public release:</p>
+                <p>Repo: <code>Momwhyareyouhere/Kairo</code></p>
                 <pre id="install-cmd"></pre>
                 <div class="row">
                     <span class="badge ok" id="status">loading...</span>
@@ -110,13 +110,13 @@
             </div>
 
             <div class="card">
-                <h2>Flux Syntax</h2>
+                <h2>Kairo Syntax</h2>
                 <p>
                     Entry function uses <code>root</code>. Helper functions use
                     <code>glyph</code>.
                 </p>
                 <pre><code>glyph greet [
-    emit "hello from flux\n".
+    emit "hello from kairo\n".
 ]
 
 root main [
@@ -138,7 +138,7 @@ done N.                  # exit with code N</code></pre>
         </div>
 
         <script>
-            const REPO = "Momwhyareyouhere/flux";
+            const REPO = "Momwhyareyouhere/Kairo";
             const API = `https://api.github.com/repos/${REPO}/releases`;
             const fallbackInstallCmd = `Open latest release and download install-latest.sh`;
             document.getElementById("install-cmd").textContent =
