@@ -113,7 +113,7 @@
         <script>
             const REPO = "Momwhyareyouhere/flux";
             const API = `https://api.github.com/repos/${REPO}/releases`;
-            const fallbackInstallCmd = `curl -fsSL https://raw.githubusercontent.com/${REPO}/main/scripts/install-latest.sh | bash -s -- ${REPO}`;
+            const fallbackInstallCmd = `Open latest release and download install-latest.sh`;
             document.getElementById("install-cmd").textContent =
                 fallbackInstallCmd;
 
@@ -143,6 +143,9 @@
                     if (installer && installer.browser_download_url) {
                         document.getElementById("install-cmd").textContent =
                             `curl -fsSL ${installer.browser_download_url} | bash -s -- ${REPO}`;
+                    } else {
+                        document.getElementById("install-cmd").textContent =
+                            `install-latest.sh asset not found in latest release`;
                     }
 
                     list.innerHTML = "";
