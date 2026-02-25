@@ -108,6 +108,33 @@
                 <h2>Releases</h2>
                 <ul id="releases"></ul>
             </div>
+
+            <div class="card">
+                <h2>Flux Syntax</h2>
+                <p>
+                    Entry function uses <code>root</code>. Helper functions use
+                    <code>glyph</code>.
+                </p>
+                <pre><code>glyph greet [
+    emit "hello from flux\n".
+]
+
+root main [
+    call greet.
+    done 0.
+]</code></pre>
+                <p>Available statements:</p>
+                <pre><code>emit "text\n".          # print text
+line.                    # print newline
+call function_name.      # call another function
+loop N call function.    # repeat function call N times
+done N.                  # exit with code N</code></pre>
+                <p>Rules:</p>
+                <pre><code>- Exactly one root function per file.
+- Function blocks start with [ and end with ].
+- Every statement ends with a dot (.).
+- Comments start with #.</code></pre>
+            </div>
         </div>
 
         <script>
