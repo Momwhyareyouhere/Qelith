@@ -3,187 +3,44 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Qelith</title>
+        <title>Qelith Releases</title>
         <style>
             :root {
-                --bg: #11151c;
-                --panel: rgba(18, 24, 33, 0.86);
-                --panel-strong: #0d1117;
-                --text: #edf2f7;
-                --muted: #a3b1c2;
-                --ok: #6ee7b7;
-                --link: #8cc7ff;
-                --border: rgba(140, 199, 255, 0.18);
-                --accent: #f2b84b;
-                --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+                --bg: #0d1117;
+                --panel: #161b22;
+                --text: #e6edf3;
+                --muted: #8b949e;
+                --ok: #3fb950;
+                --link: #58a6ff;
+                --border: #30363d;
             }
             body {
                 margin: 0;
-                background:
-                    radial-gradient(
-                        circle at top right,
-                        rgba(242, 184, 75, 0.15),
-                        transparent 30%
-                    ),
-                    radial-gradient(
-                        circle at top left,
-                        rgba(140, 199, 255, 0.16),
-                        transparent 28%
-                    ),
-                    linear-gradient(180deg, #17202c 0%, var(--bg) 60%) fixed;
+                background: radial-gradient(
+                    circle at top right,
+                    #1f2937 0%,
+                    var(--bg) 45%
+                );
                 color: var(--text);
                 font-family:
-                    "Iosevka", "IBM Plex Mono", "JetBrains Mono",
-                    "SFMono-Regular", Consolas, monospace;
-                line-height: 1.5;
-            }
-            * {
-                box-sizing: border-box;
-            }
-            .hero {
-                padding: 56px 24px 8px;
-            }
-            .hero-grid {
-                display: grid;
-                grid-template-columns: 1.2fr 0.8fr;
-                gap: 16px;
-                align-items: stretch;
-            }
-            .hero-copy {
-                padding: 28px;
-            }
-            .eyebrow {
-                display: inline-block;
-                margin-bottom: 12px;
-                padding: 5px 10px;
-                border: 1px solid var(--border);
-                border-radius: 999px;
-                font-size: 12px;
-                letter-spacing: 0.08em;
-                text-transform: uppercase;
-                color: var(--accent);
-                background: rgba(242, 184, 75, 0.08);
-            }
-            .hero h1 {
-                margin: 0;
-                font-size: clamp(40px, 8vw, 72px);
-                line-height: 0.95;
-                letter-spacing: -0.05em;
-            }
-            .hero p {
-                max-width: 58ch;
-                font-size: 15px;
-            }
-            .hero-actions {
-                display: flex;
-                gap: 12px;
-                flex-wrap: wrap;
-                margin-top: 18px;
-            }
-            .button {
-                display: inline-block;
-                padding: 10px 14px;
-                border-radius: 10px;
-                border: 1px solid var(--border);
-                color: var(--text);
-                background: rgba(255, 255, 255, 0.03);
-                text-decoration: none;
-            }
-            .button.primary {
-                border-color: rgba(242, 184, 75, 0.35);
-                background: rgba(242, 184, 75, 0.12);
-                color: #ffe3a6;
+                    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                    "Liberation Mono", "Courier New", monospace;
             }
             .wrap {
-                max-width: 1040px;
+                max-width: 900px;
                 margin: 0 auto;
-                padding: 0 24px 24px;
-            }
-            .grid {
-                display: grid;
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 16px;
+                padding: 24px;
             }
             .card {
                 background: var(--panel);
                 border: 1px solid var(--border);
-                border-radius: 18px;
-                padding: 20px;
-                margin-bottom: 16px;
-                box-shadow: var(--shadow);
-                backdrop-filter: blur(10px);
-            }
-            .card h2 {
-                margin: 0 0 10px;
-                font-size: 20px;
-            }
-            .meta {
-                color: var(--muted);
-                font-size: 13px;
-            }
-            .feature-list {
-                display: grid;
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 10px;
-                margin-top: 14px;
-            }
-            .feature {
-                padding: 12px;
-                border: 1px solid var(--border);
                 border-radius: 12px;
-                background: rgba(255, 255, 255, 0.02);
-            }
-            .feature strong {
-                display: block;
-                margin-bottom: 4px;
-                color: var(--text);
-            }
-            .snippet-label {
-                margin: 0 0 8px;
-                color: var(--muted);
-                font-size: 13px;
-                text-transform: uppercase;
-                letter-spacing: 0.08em;
-            }
-            .install-card {
-                padding: 24px;
-            }
-            .install-card p:first-of-type {
-                margin-top: 0;
-            }
-            .syntax-card {
-                grid-column: 1 / -1;
-            }
-            .rule-list {
-                margin: 12px 0 0;
-                padding-left: 18px;
-                color: var(--muted);
-            }
-            .rule-list li {
-                border: 0;
-                padding: 3px 0;
-                list-style: square;
-            }
-            .section-intro {
-                margin-top: 0;
-                max-width: 65ch;
-            }
-            @media (max-width: 860px) {
-                .hero-grid,
-                .grid,
-                .feature-list {
-                    grid-template-columns: 1fr;
-                }
-                .hero {
-                    padding-top: 28px;
-                }
-                .hero-copy,
-                .install-card {
-                    padding: 20px;
-                }
+                padding: 16px;
+                margin-bottom: 16px;
             }
             h1 {
                 margin: 0 0 8px;
+                font-size: 28px;
             }
             p {
                 color: var(--muted);
@@ -198,14 +55,13 @@
             .badge {
                 border: 1px solid var(--border);
                 border-radius: 999px;
-                padding: 3px 10px;
+                padding: 2px 10px;
                 color: var(--muted);
                 font-size: 12px;
-                background: rgba(255, 255, 255, 0.03);
             }
             .ok {
                 color: var(--ok);
-                border-color: rgba(110, 231, 183, 0.35);
+                border-color: #245d35;
             }
             a {
                 color: var(--link);
@@ -222,9 +78,9 @@
             }
             code,
             pre {
-                background: var(--panel-strong);
+                background: #0b0f14;
                 border: 1px solid var(--border);
-                border-radius: 12px;
+                border-radius: 8px;
                 color: #c9d1d9;
             }
             pre {
@@ -234,77 +90,32 @@
         </style>
     </head>
     <body>
-        <div class="wrap hero">
-            <div class="hero-grid">
-                <div class="card hero-copy">
-                    <span class="eyebrow">Function-first language</span>
-                    <h1>Qelith</h1>
-                    <p>
-                        A small language with a sharp syntax: one
-                        <code>root</code>, any number of <code>glyph</code>
-                        functions, and a lightweight interpreter/compiler
-                        toolchain.
-                    </p>
-                    <div class="hero-actions">
-                        <a
-                            class="button primary"
-                            id="latest-link"
-                            href="#"
-                            target="_blank"
-                            rel="noopener"
-                            >Latest release</a
-                        >
-                        <a class="button" href="#syntax">See syntax</a>
-                    </div>
-                    <div class="feature-list">
-                        <div class="feature">
-                            <strong>Simple structure</strong>
-                            One entrypoint, named helper functions,
-                            dot-terminated statements.
-                        </div>
-                        <div class="feature">
-                            <strong>Runtime state</strong>
-                            Variables, integer increments, conditional calls,
-                            and variable-driven loops.
-                        </div>
-                        <div class="feature">
-                            <strong>Direct CLI</strong>
-                            Use <code>qelith run</code> for interpretation and
-                            <code>qelith build</code> for native output.
-                        </div>
-                        <div class="feature">
-                            <strong>Minimal core</strong>
-                            Still intentionally small enough to evolve quickly.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card install-card">
-                    <h2>Install</h2>
-                    <p>Install Qelith from the latest public release.</p>
-                    <p class="meta">
-                        Repo: <code>Momwhyareyouhere/Qelith</code>
-                    </p>
-                    <pre id="install-cmd"></pre>
-                    <div class="row">
-                        <span class="badge ok" id="status">loading...</span>
-                    </div>
+        <div class="wrap">
+            <div class="card">
+                <h1>Qelith Releases</h1>
+                <p>Install Qelith from the latest public release:</p>
+                <p>Repo: <code>Momwhyareyouhere/Qelith</code></p>
+                <pre id="install-cmd"></pre>
+                <div class="row">
+                    <span class="badge ok" id="status">loading...</span>
+                    <a id="latest-link" href="#" target="_blank" rel="noopener"
+                        >Latest release</a
+                    >
                 </div>
             </div>
-        </div>
 
-        <div class="wrap">
-            <div class="grid">
-                <div class="card syntax-card" id="syntax">
-                    <h2>Current Syntax</h2>
-                    <p class="section-intro">
-                        The interpreter supports variables, simple expressions,
-                        conditional calls, and loops. The build path is still a
-                        smaller subset, so this section describes the runtime
-                        language.
-                    </p>
-                    <p class="snippet-label">Example</p>
-                    <pre><code>glyph greet [
+            <div class="card">
+                <h2>Releases</h2>
+                <ul id="releases"></ul>
+            </div>
+
+            <div class="card">
+                <h2>Qelith Syntax</h2>
+                <p>
+                    Entry function uses <code>root</code>. Helper functions use
+                    <code>glyph</code>.
+                </p>
+                <pre><code>glyph greet [
     emit "hello ".
     emit name.
     emit "\n".
@@ -325,8 +136,8 @@ root main [
     loop count call cheer.
     done 0.
 ]</code></pre>
-                    <p class="snippet-label">Statements</p>
-                    <pre><code>let name = "text".              # create variable
+                <p>Available statements:</p>
+                <pre><code>let name = "text".              # create variable
 set name = "other".             # replace variable value
 add count 2.                    # integer addition
 emit "text\n".                  # print string literal
@@ -338,25 +149,11 @@ if count != 0 call fn.          # inequality check
 loop 3 call fn.                 # fixed count loop
 loop count call fn.             # variable-driven loop
 done 0.                         # exit code</code></pre>
-                    <p class="snippet-label">Rules</p>
-                    <ul class="rule-list">
-                        <li>
-                            Exactly one <code>root</code> function per file.
-                        </li>
-                        <li>Helper functions use <code>glyph</code>.</li>
-                        <li>
-                            Function blocks start with <code>[</code> and end
-                            with <code>]</code>.
-                        </li>
-                        <li>Every statement ends with a dot.</li>
-                        <li>Comments start with <code>#</code>.</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h2>Releases</h2>
-                    <ul id="releases"></ul>
-                </div>
+                <p>Rules:</p>
+                <pre><code>- Exactly one root function per file.
+- Function blocks start with [ and end with ].
+- Every statement ends with a dot (.).
+- Comments start with #.</code></pre>
             </div>
         </div>
 
